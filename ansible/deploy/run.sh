@@ -1,0 +1,1 @@
+. ./unimelb-comp90024-group-10-openrc.sh; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts -u ubuntu --key-file=./.ssh/Leo2.pem main.yaml

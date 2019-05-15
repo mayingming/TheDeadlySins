@@ -1,0 +1,48 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: demovol1
+    vol_size: 20
+  - vol_name: demovol2
+    vol_size: 10
+
+# Networks
+networks: 7b90b4df-5e64-4e50-8abd-1e1339f092fa
+
+# Security group, what port to open(22), to where(unimelb IP prefix), only IP address from unimelb can access
+security_groups:
+  - name: ssh
+    description: "security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: http
+    description: "security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdbAndApp
+    description: "security group for couch db and app"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5985
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance, public key
+instances:
+  - instance_name: testLeo
+    instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
+    instance_key_name: Leo2
+    instance_flavor: uom.mse.1c4g
+  - instance_name: testLeo2
+    instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
+    instance_key_name: Leo2
+    instance_flavor: uom.mse.1c4g
+  - instance_name: testLeo3
+    instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
+    instance_key_name: Leo2
+    instance_flavor: uom.mse.1c4g

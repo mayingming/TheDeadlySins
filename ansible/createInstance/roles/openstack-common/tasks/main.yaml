@@ -1,0 +1,17 @@
+---
+# Insatll dependencies on the host, use this role to install dependencies to run the openstack
+- name: Install pip
+  become: yes
+  apt:
+    name: ["python-pip"]
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+#sudo apt-get update; sudo apt-get install python3-pip
+
+- name: Install openstachksdk
+  become: yes
+  pip:
+    name: ['openstacksdk']
+    state: latest
+# pip3 install openstacksdk, openstacksdk is required to interact with openstack API

@@ -1,0 +1,20 @@
+- hosts: all
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: false
+  roles:
+    - role: packages
+
+- hosts: Couchdb
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: false
+  roles:
+    - role: couchdb
+
+- hosts: ['SteamingHarvester', UserHarvester]
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: false
+  roles:
+    - role: scripts

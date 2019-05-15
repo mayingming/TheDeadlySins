@@ -1,0 +1,67 @@
+---
+- name: Gather facts of remote host
+  setup:
+    gather_subset: all
+
+- name: Install pip3
+  tags: always
+  become: yes
+  apt:
+    name: ['python3-pip']
+    state: latest
+    install_recommends: no
+  environment: "{{proxy_env}}"
+
+- name: pip tweepy
+  tags: always
+  become: yes
+  pip:
+    name: ['tweepy']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"
+
+- name: pip setuptools
+  tags: always
+  become: yes
+  pip:
+    name: ['setuptools']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"
+
+- name: pip nltk
+  tags: always
+  become: yes
+  pip:
+    name: ['nltk']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"
+
+- name: pip shapely
+  tags: always
+  become: yes
+  pip:
+    name: ['shapely']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"
+
+- name: pip couchdb
+  tags: always
+  become: yes
+  pip:
+    name: ['couchdb']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"
+
+- name: pip pycouchdb
+  tags: always
+  become: yes
+  pip:
+    name: ['pycouchdb']
+    state: latest
+    executable: pip3
+  environment: "{{proxy_env}}"

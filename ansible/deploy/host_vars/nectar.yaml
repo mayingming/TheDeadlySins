@@ -1,0 +1,52 @@
+proxy_env:
+  http_proxy: http://wwwproxy.unimelb.edu.au:8000
+
+py_dir: python
+cities: cities.json
+client: client.py
+preprocess: preprocess.py
+serverpy: server.py
+hostsfile: hosts
+
+
+host_key_checking: False
+
+couchdb_dir: couchdb
+couchdbCurl: cdb
+
+couchdb_settings:
+  httpd:
+   port: "5984"
+   bind_address: "0.0.0.0"
+
+couchdb_admins:
+  admin: admin
+
+couchdb_users:
+  user_with_roles:
+    password: coconutopener
+    roles:
+      - developer
+      - manager
+  user_without_roles:
+    password: password1234
+
+couchdb_databases:
+  database_without_security: {}
+  database_with_admins:
+    admins:
+      names:
+        - user_without_roles
+      roles:
+        - manager
+  database_with_members:
+    members:
+      roles:
+        - developer
+
+couchdb_replication:
+  - source: my_database
+    target: http://backup.example.com:5984/my_database
+    continuous: yes
+
+couchdb_url: "http://localhost:5984"
