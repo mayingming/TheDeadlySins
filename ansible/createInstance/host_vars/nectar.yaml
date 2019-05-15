@@ -34,15 +34,15 @@ security_groups:
 
 # Instance, public key
 instances:
-  - instance_name: testLeo
+  - instance_name: couchdb
     instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
     instance_key_name: Leo2
     instance_flavor: uom.mse.1c4g
-  - instance_name: testLeo2
+  - instance_name: streaming
     instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
     instance_key_name: Leo2
     instance_flavor: uom.mse.1c4g
-  - instance_name: testLeo3
+  - instance_name: userHarvester
     instance_image: afccf48a-9426-4618-86dc-0ceb636f0169
     instance_key_name: Leo2
     instance_flavor: uom.mse.1c4g
