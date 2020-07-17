@@ -1,2 +1,3 @@
-# CCC_Assignemt_2
+# Cloud computing project
+# The goal of the project is to harvest tweets from across the cities of Australia on the UniMelb Research Cloud and undertake a variety of data analytics scenarios that tell interesting stories of life in Australian cities related to one or more deadly sins and importantly how the Twitter and precollected Instagram data can be used alongside/compared with/augment the data available within the AURIN platform to assess/validate these sins.
 # Final_app is our front end, it includes more than 100 files so it cannot be uoloaded to github in one time, therefore we upload the zip file, sorry for the inconvinience and thanks for the understanding
